@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Say Hello') {
       steps {
-        echo 'Hello World!'
+        echo "Hello World ${MY_NAME}!"
       }
     }
     stage('Version Dump') {
@@ -13,5 +13,8 @@ pipeline {
         sh 'java -version'
       }
     }
+  }
+  environment {
+    MY_NAME = 'JBC'
   }
 }
